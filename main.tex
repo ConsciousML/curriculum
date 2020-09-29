@@ -1,0 +1,109 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[10pt,a4paper,sans]{moderncv}        % possible options include font size ('11pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{green}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.91]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Mendoza}{Axel}
+\title{Machine Learning Engineer}                               % optional, remove / comment the line if not wanted
+\address{3 Rue Morand}{75011}{Paris}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+%\phone[mobile]{06 45 45 70 12}                   % optional, remove / comment the line if not wanted
+\email{axel.mendoza@epita.fr}                               % optional, remove / comment the line if not wanted
+\phone{+33 6 45 45 70 12}
+%\photo[64pt][0.4pt]{Photo}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+\quote{Searching a position in Machine Learning}                                 % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{Professional Experience}
+
+\cventry{12 months}{Machine Learning Research Intern}{SIEMENS}{2019}{}{
+\begin{itemize}
+    \item Calcium detection and classification in coronary arteries of CT data using a ResNet-like architecture in Pytorch.
+    \item Reinforcement learning for artery landmark detection of coronary arteries in Pytorch.
+    \item Blood flow dealiasing of 3D color doppler data using UNet and aliased data generation in Pytorch.
+\end{itemize}}
+
+\cventry{7 months}{Machine Learning Research Intern}{ENGIE}{2018}{}{
+\begin{itemize} 
+    \item Deep metric learning for multi-camera car re-identification and tracking.
+    \item Transfert learning and fine-tuning of ResNet-50 architecture implementing state-of-the-art triplet loss in Tensorflow and Keras.
+    \item Attended the European Conference on Computer Vision 2018 (ECCV) in Munich.
+    %\item Resear1ch 1on Multi Object Tracking, I achieved close to state-of-the-art results on multi-camera vehicle recognition task.
+\end{itemize}}
+
+\cventry{5 months}{Software Engineering Intern}{SAP}{2016}{}{
+\begin{itemize} 
+    \item Automatic test platform and data visualization for excel pluggins.
+\end{itemize}}
+
+\section{Programming Skills}
+\cventry{}{Python, C++}{Programming Languages}{}{}{}
+\cventry{}{Pytorch, Numpy, Tensorflow, Keras, Hyperopt, Sacred, Scipy, Matplotlib}{Frameworks}{}{}{}
+\cventry{}{Detection and classification in medical imaging, object recognition and tracking, natural language processing, autonomous driving}{Deep Learning}{}{}{}
+
+\section{Education}
+\cventry{5 years}{Graduate School of Computer Science}{EPITA}{2013-2018}{Paris}{Machine Learning Engineering Master}  % arguments 3 to 6 can be left empty
+
+\cventry{6 months}{Computer Science - 3rd year}{Sejong University - South Korea}{2015}{Seoul}{Exchange student program at Sejong University.}
+
+\section{Projects}
+
+\cventry{1 year}{Computer Vision}{Deep Learning Autonomous Raspberry Driving Car}{2017-2018}{}{Prediction of steering angle and speed, based on embedded camera analysis using opencv, keras, scikit-learn and deep learning model.}
+
+\cventry{2 months}{Natural Language Processing}{Twitter Emotion Analysis}{2017-2018}{}{Prediction of emotions from film reviews on twitter.}
+
+%\cventry{3 months}{Image Processing}{GPU-based De-noising and Edge Detection}{2017-2018}{}{From scratch developpement and benchmark of computer vision algorithms in CPU and GPU version.}
+
+%\cventry{2 year}{Educational Purpose}{Re-implementation of Classic Machine Learning Algorithms}{2016-2018}{}{Re-implementation of well-known ML algorithms using numpy}
+
+\section{Languages}
+\cvitemwithcomment{English}{Professional}{Toeic Graduated}
+\cvitemwithcomment{Spanish}{Bilingual}{}
+\cvitemwithcomment{French}{Native}{}
+
+\clearpage
+
+
+
+
+
+\end{document}
+
+
+%% end of file `template.tex'.
