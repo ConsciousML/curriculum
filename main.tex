@@ -64,12 +64,12 @@
 %-----       resume       ---------------------------------------------------------
 \tcbset{enhanced,boxrule=0.2pt,colback=white!5!white,
 colframe=black!75!black,fonttitle=\bfseries,
-top=15pt,left=15pt,right=15pt,bottom=15pt}
+top=15pt,left=15pt,right=15pt,bottom=15pt,arc=10pt}
 
 \makecvtitle
 
 \begin{multicols*}{2}
-\setlength{\maincolumnwidth}{\linewidth-\leftskip-\rightskip}
+\setlength{\maincolumnwidth}{\linewidth-37pt}
 \begin{tcolorbox}[shadow={-1mm}{-0.9mm}{-0.3mm}{black!8!white}]
 \section{Skills}
 \cvitem{Languages}{
@@ -82,7 +82,14 @@ colframe=black!75!black,top=8pt,right=30pt,left=30pt,shadow={-1mm}{-0.9mm}{-0.3m
 \cvitem{Machine Learning}{Support Vector Machines, Decision Trees, Random Forests, Boosting, K-means, Guassian Mixture models, Naive Bayes.K-Nearest Neighbors, Polynomial, Logistic, Linear Regression.}
 \end{tcolorbox}
 
+\begin{tcolorbox}[shadow={-1mm}{-0.9mm}{-0.3mm}{black!8!white}]
+\section{Education}
+\cventry{5 years}{Computer Science Graduate School}{EPITA}{2013}{}{Top 1 computer science school in France. Machine Learning Major.}  % arguments 3 to 6 can be left empty
 
+\cventry{6 months}{Computer Science}{Sejong University - South Korea}{2015}{Seoul}{Exchange student program at Sejong University.}
+\end{tcolorbox}
+
+\begin{tcolorbox}[shadow={1mm}{-0.9mm}{-0.3mm}{black!8!white}]
 \section{Experience}
 \cventry{12 months}{Data Scientist Intern}{SIEMENS}{2019}{Princeton}{
 \begin{itemize}
@@ -103,11 +110,7 @@ colframe=black!75!black,top=8pt,right=30pt,left=30pt,shadow={-1mm}{-0.9mm}{-0.3m
 \begin{itemize} 
     \item Automatic test platform and data visualization for excel pluggins.
 \end{itemize}}
-
-\section{Education}
-\cventry{5 years}{Graduate School of Computer Science}{EPITA}{2013}{Paris}{Top 1 computer science school in France. Machine Learning Major.}  % arguments 3 to 6 can be left empty
-
-\cventry{6 months}{Computer Science}{Sejong University - South Korea}{2015}{Seoul}{Exchange student program at Sejong University.}
+\end{tcolorbox}
 
 \section{Projects}
 
