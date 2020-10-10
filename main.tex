@@ -62,23 +62,24 @@
 \begin{document}
 %\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
 %-----       resume       ---------------------------------------------------------
-\tcbset{enhanced,boxrule=0.2pt,colback=white!5!white,
+\tcbset{enhanced,boxrule=0.1pt,colback=white!5!white,
 colframe=black!75!black,fonttitle=\bfseries,
-top=15pt,left=15pt,right=15pt,bottom=15pt,arc=10pt,
+top=15pt,left=15pt,right=15pt,bottom=15pt,arc=5pt,
 before skip=10pt, after skip=10pt}
 
-
+\begin{tcolorbox}[shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
 \makecvtitle
+\end{tcolorbox}
 
 \begin{multicols*}{2}
     \setlength{\maincolumnwidth}{\linewidth-37pt}
     
     % SKILLS
-    \begin{tcolorbox}[shadow={-1mm}{-0.9mm}{-0.3mm}{black!8!white}]
+    \begin{tcolorbox}[shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
         \section{Skills}
         \cvitem{Languages}{
             \begin{tcolorbox}[enhanced,boxrule=0.2pt,colback=white!5!white,
-        colframe=black!75!black,top=8pt,right=30pt,left=30pt,shadow={-1mm}{-0.9mm}{-0.3mm}{black!8!white}]
+        colframe=black!75!black,top=8pt,right=30pt,left=30pt,shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
                 \color{red} \makebox[\linewidth][s]{\large \textbf{Python C C++ SQL}}
             \end{tcolorbox}}
         \cvitem{Libraries}{Pytorch, Tensorflow, Keras, OpenCV, Sklearn, Numpy, Pandas, Seaborn, Matplotlib, Hyperopt}
@@ -87,7 +88,7 @@ before skip=10pt, after skip=10pt}
     \end{tcolorbox}
     
     % EDUCATION
-    \begin{tcolorbox}[shadow={-1mm}{-0.9mm}{-0.3mm}{black!8!white}]
+    \begin{tcolorbox}[shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
         \section{Education}
         \cventry{5 years}{Computer Science Graduate School}{EPITA}{2013}{}{Top 1 computer science school in France. Machine Learning Major.}  % arguments 3 to 6 can be left empty
         
@@ -95,7 +96,7 @@ before skip=10pt, after skip=10pt}
     \end{tcolorbox}
     
     % LANGUAGE
-    \begin{tcolorbox}[shadow={-1mm}{-0.9mm}{-0.3mm}{black!8!white},height=5cm]
+    \begin{tcolorbox}[shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
         \section{Languages}
         \cvitemwithcomment{English}{Fluent}{Toeic Graduated}
         \cvitemwithcomment{Spanish}{Bilingual}{}
@@ -103,7 +104,7 @@ before skip=10pt, after skip=10pt}
     \end{tcolorbox}
     
     % EXPERIENCE
-    \begin{tcolorbox}[shadow={1mm}{-0.9mm}{-0.3mm}{black!8!white}]
+    \begin{tcolorbox}[shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
         \section{Experience}
         \cventry{12 months}{Data Scientist Intern}{SIEMENS}{2019}{Princeton}{
         \begin{itemize}
@@ -126,7 +127,7 @@ before skip=10pt, after skip=10pt}
         \end{itemize}}
     \end{tcolorbox}
     
-    \begin{tcolorbox}[shadow={-1mm}{-0.9mm}{-0.3mm}{black!8!white},height=8.1cm]
+    \begin{tcolorbox}[shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
     \section{Projects}
         \cventry{1 year}{Computer Vision}{Autonomous RC Car}{2017}{}{Built an autonomous remote-controlled car using DonkeyCar kit and a custom CNN}
         
