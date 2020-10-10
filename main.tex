@@ -21,6 +21,10 @@
 \usepackage[scale=0.88]{geometry}
 \usepackage{fontawesome}
 \usepackage{multicol}
+\usepackage{fancybox}
+\usepackage[many]{tcolorbox}
+\usetikzlibrary{calc}
+\tcbuselibrary{skins}
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
@@ -58,16 +62,23 @@
 \begin{document}
 %\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
 %-----       resume       ---------------------------------------------------------
+\tcbset{enhanced,boxrule=0.1pt,colback=white!5!white,
+colframe=red!75!black,fonttitle=\bfseries}
+
 \makecvtitle
 
-\begin{multicols}{2}
+\begin{multicols*}{2}
 \setlength{\maincolumnwidth}{\linewidth-\leftskip-\rightskip}
 %Pytorch, Tensorflow, Keras, OpenCV, Sklearn, Numpy, Pandas, Seaborn, Matplotlib
+\begin{tcolorbox}[drop fuzzy shadow west]
 \section{Skills}
-\cvitem{Languages}{\color{red} {\textbf{Python, C, C++, SQL}}}
+\cvitem{Languages}{
+    \Ovalbox{
+        \color{red} \textbf{Python, C, C++, SQL}}}
 \cvitem{Libraries}{Pytorch, Tensorflow, Keras, OpenCV, Sklearn, Numpy, Pandas, Seaborn, Matplotlib, Hyperopt}
 \cvitem{Deep Learning}{Deep Learning for Medical Imaging, Object Re-Identification, Autonomous Driving, Reinforcement Learning and Auto-Encoders.}
 \cvitem{Machine Learning}{Support Vector Machines, Decision Trees, Random Forests, Boosting, K-means, Guassian Mixture models, Naive Bayes.K-Nearest Neighbors, Polynomial, Logistic, Linear Regression.}
+\end{tcolorbox}
 
 
 \section{Experience}
@@ -110,7 +121,7 @@
 \cvitemwithcomment{English}{Fluent}{Toeic Graduated}
 \cvitemwithcomment{Spanish}{Bilingual}{}
 \cvitemwithcomment{French}{Native}{}
-\end{multicols}
+\end{multicols*}
 \end{document}
 
 
