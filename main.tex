@@ -20,6 +20,7 @@
 % adjust the page margins
 \usepackage[scale=0.91]{geometry}
 \usepackage{fontawesome}
+\usepackage{multicol}
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
@@ -50,14 +51,23 @@
 %----------------------------------------------------------------------------------
 %            content
 %----------------------------------------------------------------------------------
+
+\setlength{\hintscolumnwidth}{2cm}
+\setlength{\separatorcolumnwidth}{1em}
+
 \begin{document}
 %\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
 %-----       resume       ---------------------------------------------------------
 \makecvtitle
+
+\begin{multicols}{2}
+\setlength{\maincolumnwidth}{\linewidth-\leftskip-\rightskip}
+%Pytorch, Tensorflow, Keras, OpenCV, Sklearn, Numpy, Pandas, Seaborn, Matplotlib
 \section{Skills}
 \cventry{}{Python, C, C++, SQL}{Programming Languages}{}{}{}
-\cventry{}{Pytorch, Tensorflow, Keras, OpenCV, Sklearn, Numpy, Pandas, Seaborn, Matplotlib}{Libraries}{}{}{}
-\cventry{}{Deep Learning for Medical Imaging, Object Re-Identification, Autonomous Driving, Reinforcement Learning and Auto-Encoders}{Machine Learning}{}{}{
+\cventry{}{}{Libraries}{}{}{}
+%Deep Learning for Medical Imaging, Object Re-Identification, Autonomous Driving, Reinforcement Learning and Auto-Encoders
+\cventry{}{}{Machine Learning}{}{}{
 Support Vector Machines, Decision Trees, Random Forests, Boosting, K-means, Guassian Mixture models, Naive Bayes.
 K-Nearest Neighbors, Polynomial, Logistic, Linear Regression.}
 
@@ -102,13 +112,7 @@ K-Nearest Neighbors, Polynomial, Logistic, Linear Regression.}
 \cvitemwithcomment{English}{Fluent}{Toeic Graduated}
 \cvitemwithcomment{Spanish}{Bilingual}{}
 \cvitemwithcomment{French}{Native}{}
-
-\clearpage
-
-
-
-
-
+\end{multicols}
 \end{document}
 
 
