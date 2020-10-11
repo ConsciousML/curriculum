@@ -33,11 +33,10 @@
 \title{Data Scientist}                               % optional, remove / comment the line if not wanted
 \address{3 Rue Morand}{75011}{Paris}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
 %\phone[mobile]{06 45 45 70 12}                   % optional, remove / comment the line if not wanted
-\homepage{axelmendoza.com}
-\email{axel.mendoza@epita.fr}                        % optional, remove / comment the line if not wanted
-\social[linkedin]{axelmdz}
-\social[github]{ConsciousML}
-\extrainfo{\faFeed~\href{https://www.axelmendoza.com/blog}{blog}}
+%\email{axel.mendoza@epita.fr}                        % optional, remove / comment the line if not wanted
+%\social[linkedin]{axelmdz}
+%\social[github]{ConsciousML}
+\extrainfo{\faGlobe~\href{https://www.axelmendoza.com}{website}~~\faGithub~\href{https://www.github.com/consciousl}{github}~~\faFeed~\href{https://www.axelmendoza.com/blog}{blog}~~\faLinkedinSquare ~\href{https://www.linkedin.com/in/axel-mendoza-298608121}{linkedin}~~\faEnvelope~\href{mailto:axel.mendoza@epita.fr}{axel.mendoza@epita.fr}}
 %\phone{+33 6 45 45 70 12}
 %\photo[64pt][0.4pt]{Photo.png}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 \quote{Data Scientist with two years experience \\searching a full time opportunity in Paris}                                 % optional, remove / comment the line if not wanted
@@ -55,19 +54,34 @@
 %            content
 %----------------------------------------------------------------------------------
 
+\usepackage[pages=some]{background}
+\backgroundsetup{
+scale=1,
+color=black,
+opacity=0.8,
+angle=0,
+contents={%
+  \includegraphics[width=\paperwidth,height=\paperheight]{cvbackgroundcopy.jpg}
+  }%
+}
+
 \setlength{\hintscolumnwidth}{2cm}
 \setlength{\separatorcolumnwidth}{1em}
 \setlength{\columnsep}{12pt}
 
 \begin{document}
+\BgThispage
+%\definecolor{light-gray}{gray}{0.97} 
+%\pagecolor{light-gray}
+
 %\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
 %-----       resume       ---------------------------------------------------------
-\tcbset{enhanced,boxrule=0.1pt,colback=white!5!white,
+\tcbset{enhanced,boxrule=0.4pt,colback=white!5!white,
 colframe=black!75!black,fonttitle=\bfseries,
 top=15pt,left=15pt,right=15pt,bottom=15pt,arc=5pt,
-before skip=12pt, after skip=12pt}
+before skip=12pt, after skip=12pt, shadow={-1mm}{-1mm}{0mm}{black!15!white}}
 
-\begin{tcolorbox}[shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
+\begin{tcolorbox}
 \makecvtitle
 \end{tcolorbox}
 
@@ -75,11 +89,11 @@ before skip=12pt, after skip=12pt}
     \setlength{\maincolumnwidth}{\linewidth-37pt}
     
     % SKILLS
-    \begin{tcolorbox}[shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
+    \begin{tcolorbox}
         \section{Skills}
         \cvitem{Languages}{
             \begin{tcolorbox}[enhanced,boxrule=0.2pt,colback=white!5!white,
-        colframe=black!75!black,top=8pt,right=30pt,left=30pt,shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
+        colframe=black!75!black,top=3pt,bottom=2pt,right=30pt,left=30pt,shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
                 \color{red} \makebox[\linewidth][s]{\large \textbf{Python C C++ SQL}}
             \end{tcolorbox}}
         \cvcomputer{category}{programs}{category}{programs}
@@ -89,7 +103,7 @@ before skip=12pt, after skip=12pt}
     \end{tcolorbox}
     
     % EDUCATION
-    \begin{tcolorbox}[shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
+    \begin{tcolorbox}
         \section{Education}
         \cventry{5 years}{Computer Science Graduate School}{EPITA}{2013}{}{\textbf{Top 1} computer science school in France. Machine Learning Major.}  % arguments 3 to 6 can be left empty
         
@@ -97,7 +111,7 @@ before skip=12pt, after skip=12pt}
     \end{tcolorbox}
     
     % LANGUAGE
-    \begin{tcolorbox}[shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
+    \begin{tcolorbox}
         \section{Languages}
         \cvlanguage{English}{Fluent}{lived 1 year in New Jersey}
         \cvlanguage{Spanish}{Bilingual}{hispanic family}
@@ -105,7 +119,7 @@ before skip=12pt, after skip=12pt}
     \end{tcolorbox}
     
     % EXPERIENCE
-    \begin{tcolorbox}[shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
+    \begin{tcolorbox}
         \section{Experience}
         \cventry{14 months}{Data Scientist Intern}{SIEMENS}{2019}{Princeton}{
         \begin{itemize}
@@ -128,7 +142,7 @@ before skip=12pt, after skip=12pt}
         \end{itemize}}
     \end{tcolorbox}
     
-    \begin{tcolorbox}[shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
+    \begin{tcolorbox}
     \section{Projects}
         \cventry{12 months}{Computer Vision}{Autonomous RC Car}{2017}{}{Built an autonomous remote-controlled car using DonkeyCar kit and a custom CNN}
         
