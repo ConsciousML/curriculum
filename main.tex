@@ -6,8 +6,7 @@
 % available at http://www.latex-project.org/lppl/.
 
 
-\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('11pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
-
+\documentclass[12pt,a4paper, sans]{moderncv}        % possible options include font size ('11pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 % moderncv themes
 \moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \moderncvcolor{red}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
@@ -36,7 +35,7 @@
 %\email{axel.mendoza@epita.fr}                        % optional, remove / comment the line if not wanted
 %\social[linkedin]{axelmdz}
 %\social[github]{ConsciousML}
-\extrainfo{\faGlobe~\href{https://www.axelmendoza.com}{website}~~\faGithub~\href{https://www.github.com/consciousl}{github}~~\faFeed~\href{https://www.axelmendoza.com/blog}{blog}~~\faLinkedinSquare ~\href{https://www.linkedin.com/in/axel-mendoza-298608121}{linkedin}~~\faEnvelope~\href{mailto:axel.mendoza@epita.fr}{mail}}
+\extrainfo{\faGlobe~\href{https://www.axelmendoza.com}{website}\quad\faGithub~\href{https://www.github.com/consciousl}{github}\quad\faFeed~\href{https://www.axelmendoza.com/blog}{blog}\quad\faLinkedinSquare~\href{https://www.linkedin.com/in/axel-mendoza-298608121}{linkedin}\quad\faEnvelope~\href{mailto:axel.mendoza@epita.fr}{mail}}
 %\phone{+33 6 45 45 70 12}
 %\photo[64pt][0.4pt]{Photo.png}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 \quote{Data Scientist with two years experience \\searching a full time opportunity in Paris}                                 % optional, remove / comment the line if not wanted
@@ -58,7 +57,7 @@
 \backgroundsetup{
 scale=1,
 color=black,
-opacity=0.8,
+opacity=0.9,
 angle=0,
 contents={%
   \includegraphics[width=\paperwidth,height=\paperheight]{cvbackgroundcopy.jpg}
@@ -68,6 +67,7 @@ contents={%
 \setlength{\hintscolumnwidth}{2cm}
 \setlength{\separatorcolumnwidth}{1em}
 \setlength{\columnsep}{12pt}
+
 
 \begin{document}
 \BgThispage
@@ -93,11 +93,10 @@ before skip=12pt, after skip=12pt, shadow={-1mm}{-1mm}{0mm}{black!15!white}}
         \section{Skills}
         \cvitem{Languages}{
             \begin{tcolorbox}[enhanced,boxrule=0.2pt,colback=white!5!white,
-        colframe=black!75!black,top=3pt,bottom=2pt,right=30pt,left=30pt,shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
-                \color{red} \makebox[\linewidth][s]{\large \textbf{Python C C++ SQL}}
+        colframe=red!75!red,top=3pt,bottom=2pt,right=30pt,left=30pt,shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
+                \color{black} \makebox[\linewidth][s]{\textbf{Python C C++ SQL}}
             \end{tcolorbox}}
-        \cvcomputer{category}{programs}{category}{programs}
-        \cvitem{Libraries}{Pytorch, Tensorflow, Keras, OpenCV, Sklearn, Numpy, Pandas, Seaborn, Matplotlib, Hyperopt}
+        \cvitem{Frameworks}{PyTorch TensorFlow Keras OpenCV Sklearn Numpy Pandas Seaborn Matplotlib Hyperopt}
         \cvitem{Deep Learning}{Deep Learning for Medical Imaging, Object Re-Identification, Autonomous Driving, Reinforcement Learning and Auto-Encoders.}
         \cvitem{Machine Learning}{Support Vector Machines, Decision Trees, Random Forests, Boosting, K-means, Guassian Mixture models, Naive Bayes.K-Nearest Neighbors, Polynomial, Logistic, Linear Regression.}
     \end{tcolorbox}
@@ -105,7 +104,7 @@ before skip=12pt, after skip=12pt, shadow={-1mm}{-1mm}{0mm}{black!15!white}}
     % EDUCATION
     \begin{tcolorbox}
         \section{Education}
-        \cventry{5 years}{Computer Science Graduate School}{EPITA}{2013}{}{\textbf{Top 1} computer science school in France. Machine Learning Major.}  % arguments 3 to 6 can be left empty
+        \cventry[6pt]{5 years}{Computer Science, Data Science Major}{EPITA}{2013}{}{Top 1 computer engineering school in France. }  % arguments 3 to 6 can be left empty
         
         \cventry{6 months}{Computer Science}{Sejong University - South Korea}{2015}{Seoul}{Exchange student program at Sejong University.}
     \end{tcolorbox}
@@ -113,7 +112,7 @@ before skip=12pt, after skip=12pt, shadow={-1mm}{-1mm}{0mm}{black!15!white}}
     % LANGUAGE
     \begin{tcolorbox}
         \section{Languages}
-        \cvlanguage{English}{Fluent}{lived 1 year in New Jersey}
+        \cvlanguage{English}{Fluent}{lived in the US}
         \cvlanguage{Spanish}{Bilingual}{hispanic family}
         \cvlanguage{French}{Native}{mother tongue}
     \end{tcolorbox}
@@ -123,30 +122,37 @@ before skip=12pt, after skip=12pt, shadow={-1mm}{-1mm}{0mm}{black!15!white}}
         \section{Experience}
         \cventry{14 months}{Data Scientist Intern}{SIEMENS}{2019}{Princeton}{
         \begin{itemize}
-            \item Calcium detection and classification in coronary arteries of CT data using a ResNet-like architecture in Pytorch.
-            \item Reinforcement learning for artery landmark detection of coronary arteries in Pytorch.
-            \item Blood flow dealiasing of 3D color doppler data using UNet and aliased data generation in Pytorch.
+            \item Improved physician diagnosis of heart disease by creating a coronary calcium classifier trained on CT scans using a Unet.
+            \item Optimized model complexity to fit hospital needs by designing a faster approach using ResNet3D.
+            \item Enhanced detection of mitral valve regurgitation by creating a blood flow dealiasing model using Unet trained on 3D color doppler data.
+            \item Designed the above solutions with PyTorch.
         \end{itemize}}
         
         \cventry{7 months}{Data Scientist Intern}{ENGIE}{2018}{Paris}{
         \begin{itemize} 
-            \item Deep metric learning for multi-camera car re-identification and tracking.
-            \item Transfert learning and fine-tuning of ResNet-50 architecture implementing state-of-the-art triplet loss in Tensorflow and Keras.
-            \item Attended the European Conference on Computer Vision 2018 (ECCV) in Munich.
-            %\item Resear1ch 1on Multi Object Tracking, I achieved close to state-of-the-art results on multi-camera vehicle recognition task.
+            \item Improved the security of power-plants by designing a multi-camera vehicle re-identification and tracking system using Keras and TensorFlow.
+            \item Implemented the 2018 state-of-the-art solution and improved the mean average precision by 6\% by adapting a pedestrian re-id paper to the vehicle domain.
+            \item Collaborated with the best researchers in the field after being invited to the European Conference on Computer Vision 2018 in Munich.
         \end{itemize}}
         
         \cventry{5 months}{Software Engineering Intern}{SAP}{2016}{Paris}{
         \begin{itemize} 
-            \item Automatic test platform and data visualization for excel pluggins.
+            \item Improved the quality of an excel pluggin by designing an automatic testing platform.
         \end{itemize}}
     \end{tcolorbox}
     
     \begin{tcolorbox}
     \section{Projects}
-        \cventry{12 months}{Computer Vision}{Autonomous RC Car~\href{https://github.com/ConsciousML/Autonomous-RC-Car}{\faGithub}}{2017}{}{Built an autonomous remote-controlled car using DonkeyCar kit and a custom CNN}
+        \cventry{12 months}{Keras}{Autonomous RC Car~\href{https://github.com/ConsciousML/Autonomous-RC-Car}{\faGithub}}{2017}{}{
+        \begin{itemize}
+            \item Built an remote-controlled car able to drive without assistance in any track.
+            \item Predict speed and steering angle in real-time from an embedded camera using CNN.
+        \end{itemize}}
         
-        \cventry{3 months}{From scratch re-implementation}{Machine Learning Blog~\href{https://www.axelmendoza.com/blog}{\faFeed}}{2020}{}{Re-implementation of the most used machine learning algorithms from scratch using Pytorch.}
+        \cventry{3 months}{PyTorch}{Machine Learning Blog~\href{https://www.axelmendoza.com/blog}{\faFeed}}{2020}{}{
+        \begin{itemize}
+            \item From scratch implementation of the algorithms in the machine learning section.
+        \end{itemize}}
         
         %\cventry{3 months}{Image Processing}{GPU-based De-noising and Edge Detection}{2017-2018}{}{From scratch developpement and benchmark of computer vision algorithms in CPU and GPU version.}
         
