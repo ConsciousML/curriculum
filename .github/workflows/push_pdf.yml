@@ -24,7 +24,15 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: master
+          
       - name: TeXLive Action
-        run: ./push_pdf.sh "compile and push pdf"
+        # You may pin to the exact commit or the version.
+        # uses: fredqi/tl-action@6713a805bd9bab56c4777f06c62b10de1c787750
+        uses: fredqi/tl-action@mini-v2
+        with:
+          # The LaTeX file to be compiled.
+          tex_files: main.tex
+          # The LaTeX engine to be invoked.
+          compiler: pdflatex # optional, default is latexmk
         
     
