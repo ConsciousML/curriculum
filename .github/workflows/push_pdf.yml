@@ -40,7 +40,7 @@ jobs:
         uses: EndBug/add-and-commit@v5.1.0
         with:
           # Arguments for the git add command
-          add: axelm_result.pdf # optional, default is .
+          add: axelm_resume.pdf # optional, default is .
           # The name of the user that will be displayed as the author of the commit
           author_name: Axel Mendoza# optional
           # The email of the user that will be displayed as the author of the commit
