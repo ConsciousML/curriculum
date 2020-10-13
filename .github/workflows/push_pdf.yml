@@ -33,6 +33,7 @@ jobs:
           root_file: axelm_resume.tex
           # LaTeX engine to be used
           compiler: pdflatex
+          args: ''
       
       - name: Add & Commit
         # You may pin to the exact commit or the version.
