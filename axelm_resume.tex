@@ -24,6 +24,7 @@
 \usepackage[many]{tcolorbox}
 \usetikzlibrary{calc}
 \tcbuselibrary{skins}
+\usepackage{eso-pic,graphicx}
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
@@ -53,16 +54,6 @@
 %            content
 %----------------------------------------------------------------------------------
 
-\usepackage[pages=some]{background}
-\backgroundsetup{
-scale=1,
-color=black,
-opacity=0.9,
-angle=0,
-contents={%
-  \includegraphics[width=\paperwidth,height=\paperheight]{cvbackgroundcopy.jpg}
-  }%
-}
 
 \setlength{\hintscolumnwidth}{2cm}
 \setlength{\separatorcolumnwidth}{1em}
@@ -70,9 +61,11 @@ contents={%
 
 
 \begin{document}
-\BgThispage
+%\tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{cvbackgroundcopy.jpg}};
 %\definecolor{light-gray}{gray}{0.97} 
 %\pagecolor{light-gray}
+\AddToShipoutPictureBG{\includegraphics[width=\paperwidth,height=\paperheight]{cvbackgroundcopy.jpg}}
+
 
 %\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
 %-----       resume       ---------------------------------------------------------
