@@ -24,16 +24,15 @@ jobs:
         with:
           ref: master
           
-      - name: LaTeX compilation
+      - name: Compile LateX
         # You may pin to the exact commit or the version.
-        # uses: dante-ev/latex-action@259e5ff953ad4d4616fbd09cc87a526ee5c4499a
-        uses: dante-ev/latex-action@v0.2.0
+        # uses: vinay0410/tectonic-action@b3138021657a3cdb3823f3980be054ca89e86d81
+        uses: vinay0410/tectonic-action@v1.1.2
         with:
-        # The root LaTeX file to be compiled
-          root_file: axelm_resume.tex
-          # LaTeX engine to be used
-          compiler: xelatex
-          args: ''
+          # Path of Tex File
+          tex_path: axelm_resume.tex
+          # String stating whether to push output PDF, PDF will only be pushed in case of "yes"
+          push: no# optional, default is no
       
       - name: Add & Commit
         # You may pin to the exact commit or the version.
