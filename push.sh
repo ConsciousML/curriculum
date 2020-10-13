@@ -8,7 +8,7 @@ printf "\033[0;32mCompile and push pdf to GitHub...\033[0m\n"
 pdflatex main.tex
 
 # Add changes to git.
-git add main.pdf
+git add -u
 
 # Commit changes.
 msg="rebuilding site $(date)"
