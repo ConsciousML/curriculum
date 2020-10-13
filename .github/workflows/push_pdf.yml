@@ -32,7 +32,7 @@ jobs:
         # The root LaTeX file to be compiled
           root_file: axelm_resume.tex
           # LaTeX engine to be used
-          compiler: pdflatex
+          compiler: xelatex
           args: ''
       
       - name: Add & Commit
