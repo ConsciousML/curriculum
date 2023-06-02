@@ -31,7 +31,8 @@
 % personal data
 \name{Axel}{Mendoza}
 %\title{\textbf{Data Scientist}}                               % optional, remove / comment the line if not wanted
-\title{\textbf{Computer Vision Engineer}\vspace{2 ex}}                 % optional, remove / comment the line if not wanted
+\title{\textbf{Senior ML Engineer}\vspace{2 ex}}                 % optional, remove / comment the line if not wanted
+
 \address{Paris}{75003}{France}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
 %\phone[mobile]{06 45 45 70 12}                   % optional, remove / comment the line if not wanted
 %\email{}                        % optional, remove / comment the line if not wanted
@@ -41,7 +42,8 @@
 {github}\quad\faAt~\href{mailto:axelmendoza@hotmail.fr}{axelmendoza@hotmail.fr}\quad\faBlog~\href{https://www.axelmendoza.fr/blog}{blog}\quad\faLinkedin~\href{https://www.linkedin.com/in/axel-mendoza-298608121}{linkedin}\quad}
 %\phone{+33 6 45 45 70 12}
 %\photo[64pt][0.4pt]{Photo.png}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
-\quote{\color{red}{Looking for exciting Deep Learning or MLOps opportunities}}                            % optional, remove / comment the line if not wanted
+\quote{\color{red}{Advancing the frontier of AI through innovative Machine Learning solutions and efficient MLOps practices}}                            % optional, remove / comment the line if not wanted
+
 
 % to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
 %\makeatletter
@@ -85,15 +87,32 @@ before skip=12pt, after skip=12pt, shadow={-1mm}{-1mm}{0mm}{black!15!white}}
     
     % SKILLS
     \begin{tcolorbox}
-        \section{Skills}
-        \cvitem{Programming Skills}{
+        \section{Technical Skills}
+        \cvitem{Programming Languages}{
             \begin{tcolorbox}[enhanced,boxrule=0.2pt,colback=white!5!white,
         colframe=red!75!red,top=3pt,bottom=2pt,right=30pt,left=30pt,shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
-                \color{black} \makebox[\linewidth][s]{\textbf{Python SQL C++}}
+                \color{black} \makebox[\linewidth][s]{\textbf{Python Terraform SQL}}
             \end{tcolorbox}}
-        \cvitem{Frameworks}{PyTorch TensorFlow Keras OpenCV Sklearn Numpy Pandas Matplotlib}
-        \cvitem{Tools}{AirFlow Git Unix CI/CD Docker CloudRun TensorRT}
+         
+        \cvitem{Tools}{\\ZenML MLflow CI/CD Airbyte Airflow Git Docker TensorRT Unix}
+        \cvitem{Python Frameworks}{\\PyTorch TensorFlow Keras OpenCV Scikit-learn Numpy Pandas Matplotlib Seaborn}
+
+        \textbf{Google Cloud Plaform:}
+        \vspace*{-0.7\baselineskip}
+        \begin{multicols*}{2}
+            \begin{itemize}
+            \item Vertex AI
+            \item Cloud Run
+            \item Cloud Function
+            \item Cloud Storage
+            \item Pub/Sub
+            \item Compute Engie
+            \end{itemize}
+        \end{multicols*}
+        \vspace*{-0.7\baselineskip}
+
         \textbf{Expertise:}
+        \vspace*{-0.7\baselineskip}
         \begin{multicols*}{2}
             \begin{itemize}
             \item Medical Imaging
@@ -104,21 +123,9 @@ before skip=12pt, after skip=12pt, shadow={-1mm}{-1mm}{0mm}{black!15!white}}
             \item Autonomous Driving
             \end{itemize}
         \end{multicols*}
-         %Reinforcement Learning
-        %\cvitem{Machine Learning}{
-        %\begin{itemize}
-        %    \item Support Vector Machines~\href{http://axelmendoza.com/blog/svm/kernel-trick/pytorch/eda/from-scratch/2020/09/26/Support-Vector-Machines.html}{\color{red}\faRss}
-        %    \item Decision Trees, Random Forests, AdaBoost~\href{http://axelmendoza.com/blog/decision-tree/random-forest/adaboost/heart-disease/pytorch/eda/from-scratch/2020/09/23/Decision-Trees-and-Ensembles.html}{\color{red}\faRss}
-        %    \item K-means, Guassian Mixture Models~\href{http://axelmendoza.com/blog/decision-tree/random-forest/adaboost/heart-disease/pytorch/eda/from-scratch/2020/09/23/Decision-Trees-and-Ensembles.html}{\color{red}\faRss}
-        %    \item Naive Bayes~\href{http://axelmendoza.com/blog/naive-bayes/alcohol/pytorch/eda/from-scratch/2020/09/17/Naive-Bayes-Classifier.html}{\color{red}\faRss}
-        %    \item K-Nearest Neighbors~\href{http://axelmendoza.com/blog/knn/wine-quality/pytorch/eda/from-scratch/2020/09/13/K-Nearest-Neigbors.html}{\color{red}\faRss}
-        %    \item Polynomial Regression ~\href{http://axelmendoza.com/blog/polynomial-regression/pytorch/gradient-descent/from-scratch/2020/09/14/Polynomial-Regression.html}{\color{red}\faRss}
-        %    \item Logistic Regression~\href{http://axelmendoza.com/blog/logistic-regression/polynomial-regression/diabetes/pytorch/from-scratch/2020/09/12/Logistic-Regression.html}{\color{red}\faRss} 
-        %    \item Linear Regression ~\href{http://axelmendoza.com/blog/linear-regression/insurance-data/pytorch/from-scratch/2020/09/07/Linear-Regression.html}{\color{red}\faRss}
-        %\end{itemize}}
-        \cvlanguage{English}{Fluent}{lived in the US}
-        \cvlanguage{Spanish}{Bilingual}{hispanic origins}
-        \cvlanguage{French}{Native}{mother tongue}
+        %\cvlanguage{English}{Fluent}{lived in the US}
+        %\cvlanguage{Spanish}{Bilingual}{hispanic origins}
+        %\cvlanguage{French}{Native}{mother tongue}
     \end{tcolorbox}
     
     \begin{tcolorbox}
@@ -133,15 +140,15 @@ Artery}{}{2021}{
     
     \begin{tcolorbox}
     \section{Projects}
+        \cventry{Current}{PyTorch, Numpy, Pandas, Seaborn}{Machine Learning Blog~\href{https://github.com/ConsciousML/ML-from-scratch}{\color{red}~\href{https://www.axelmendoza.fr/blog}{\faBlog}}}{2020}{}{
+        \begin{itemize}
+            \item From scratch implementation of the most used algorithms in machine learning.
+        \end{itemize}}
+        
         \cventry{12 months}{Python, Keras, OpenCV}{Autonomous RC Car~\href{https://github.com/ConsciousML/Autonomous-RC-Car}{\color{red}\faGithub}~\href{https://github.com/ConsciousML/Autonomous-RC-Car/raw/master/data/demo/v2.0/competition_03.mp4}{\color{red}\faCamera}}{2017}{}{
         \begin{itemize}
             \item Remote-controlled car that predicts speed and steering angle in real-time.
             \item 3rd at \href{http://www.mylanderpages.com/ironcar2018/ironcar2018}{\color{red}IronCar} Summer 2018 and 1st at \href{https://www.meetup.com/DIY-Robocars-France}{\color{red}RobotCars} Winter 2018 tournaments.
-        \end{itemize}}
-        
-        \cventry{3 months}{PyTorch, Numpy, Pandas, Seaborn}{Machine Learning From Scratch~\href{https://github.com/ConsciousML/ML-from-scratch}{\color{red}\faGithub~\href{https://www.axelmendoza.fr/blog}{\faBlog}}}{2020}{}{
-        \begin{itemize}
-            \item From scratch implementation of the most used algorithms in machine learning.
         \end{itemize}}
         
     \end{tcolorbox}
@@ -149,7 +156,14 @@ Artery}{}{2021}{
     % EXPERIENCE
     \begin{tcolorbox}
         \section{Experience}
-        \cventry{Current}{Computer Vision Engineer}{BOXY~\href{https://www.getboxy.co/}{\color{red}\faLink}}{Dec 2020}{Paris}{
+        \cventry{Current}{Senior ML Engineer}{TRINOV~\href{https://trinov.com/}{\color{red}\faLink}}{Dec 2020 - Avr 2023}{Paris}{
+            \begin{itemize}
+            \item \textbf{Leading a team} of 5 data scientists
+            \item Automating ML workflows with MLOps
+            \item Building an \textbf{AI infrastructure} with Terraform, Vertex AI and ZenML
+            \end{itemize}
+        }
+        \cventry{27 months}{Computer Vision Engineer}{BOXY~\href{https://www.getboxy.co/}{\color{red}\faLink}}{Dec 2020}{Paris}{
             \begin{itemize}
                 \item Designed person tracking and re-identification systems of an \textbf{autonomous grocery store}.
                 \item Enhanced \textbf{product attribution} using Pose Estimation.
@@ -160,7 +174,7 @@ Artery}{}{2021}{
         
         \cventry{14 months}{Computer Vision Engineer}{SIEMENS~\href{https://www.siemens-healthineers.com}{\color{red}\faLink}}{Apr 2019 - Jun 2020}{US}{
         \begin{itemize}
-            \item Improved physician diagnosis of \textbf{heart disease} by creating a coronary calcium detector trained with Unet and Pytorch.
+            \item Improved physician diagnosis of \textbf{heart disease} with the Unet architecture and Pytorch.
             \item Improved heart disease diagnosis by \textbf{classifying calcium} in high and low risk arteries.
             \item Optimized model complexity to fit hospital needs by designing a faster approach using ResNet3D.
             \item Enhanced detection of \textbf{mitral valve regurgitation} by creating a blood flow dealiasing model using Unet trained on 3D color doppler data using Pytorch and C++.
@@ -171,7 +185,6 @@ Artery}{}{2021}{
         \cventry{7 months}{Computer Vision Intern}{ENGIE~\href{https://www.engie.com/en/innovation-transition-energetique/centres-de-recherche/crigen}{\color{red}\faLink}}{May - Nov 2018}{Paris}{
         \begin{itemize} 
             \item Improved security of power-plants by designing a \textbf{multi-camera vehicle re-identification and tracking} system using Keras and TensorFlow.
-            \item Adapted a pedestrian re-id to vehicle tracking.
         \end{itemize}}
         
         \cventry{5 months}{Software Engineering Intern}{SAP~\href{https://www.sap.com/corporate/en/company.html}{\color{red}\faLink}}{Feb - Jul 2016}{Paris}{
