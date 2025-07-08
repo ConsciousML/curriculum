@@ -5,7 +5,6 @@
 % conditions of the LaTeX Project Public License version 1.3c,
 % available at http://www.latex-project.org/lppl/.
 
-
 \documentclass[11pt,a4paper, sans]{moderncv}        % possible options include font size ('11pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 % moderncv themes
 \moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
@@ -31,7 +30,7 @@
 % personal data
 \name{Axel}{Mendoza}
 %\title{\textbf{Data Scientist}}                               % optional, remove / comment the line if not wanted
-\title{\textbf{Senior ML Engineer}\vspace{2 ex}}                 % optional, remove / comment the line if not wanted
+\title{Senior MLOps Engineer\vspace{2ex}}                 % optional, remove / comment the line if not wanted
 
 \address{Paris}{75003}{France}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
 %\phone[mobile]{06 45 45 70 12}                   % optional, remove / comment the line if not wanted
@@ -42,7 +41,6 @@
     \faLinkedin~\href{https://www.linkedin.com/in/axel-mendoza-298608121}{linkedin}\quad
     \faBlog~\href{https://www.axelmendoza.com}{blog}\quad
     \faAt~\href{mailto:axelmendoza@hotmail.fr}{axelmendoza@hotmail.fr}\quad
-    \faGlobeAmericas~\href{https://www.axelmendoza.fr}{website}\quad
     \faGithub~\href{https://www.github.com/consciousml}{github}\quad
 }
 %\phone{+33 6 45 45 70 12}
@@ -68,6 +66,9 @@
 \setlength{\separatorcolumnwidth}{1em}
 \setlength{\columnsep}{12pt}
 
+% Change title size
+\renewcommand*{\namefont}{\fontsize{22}{26}\bfseries\upshape}
+\renewcommand*{\titlefont}{\fontsize{22}{26}\bfseries\upshape}
 
 \begin{document}
 %\tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{cvbackgroundcopy.jpg}};
@@ -99,7 +100,7 @@ before skip=12pt, after skip=12pt, shadow={-1mm}{-1mm}{0mm}{black!15!white}}
                 \color{black} \makebox[\linewidth][s]{\textbf{Python SQL C++}}
             \end{tcolorbox}}
          
-        \cvitem{Tools}{\\Terraform, Terragrunt, Dagster, Airflow, Docker, CI/CD,  ZenML, MLflow, Airbyte, DBT, Git, Unix}
+        \cvitem{Tools}{\\Terraform, Terragrunt, Dagster, Airflow, Docker, CI/CD, MLflow, Airbyte, DBT, Git, Unix}
         \cvitem{Python Frameworks}{\\PyTorch, TensorFlow, Keras, OpenCV, Scikit-learn, Numpy, Pandas, Matplotlib, Seaborn}
 
         \textbf{Google Cloud Plaform (GCP):}
@@ -147,7 +148,7 @@ Artery}{}{2021}{
     
     \begin{tcolorbox}
     \section{Projects}
-        \cventry{Current}{Technical Writing}{ConsciousML Blog~\href{https://github.com/ConsciousML/ML-from-scratch}{\color{red}~\href{https://www.axelmendoza.fr/blog}{\faBlog}}}{2020}{}{
+        \cventry{Current}{Technical Writing}{ConsciousML Blog~\href{https://github.com/ConsciousML/ML-from-scratch}{\color{red}~\href{https://www.axelmendoza.com}{\faBlog}}}{2020}{}{
         \begin{itemize}
             \item Writing articles about Data Science, Data Engineering and MLOps
         \end{itemize}}
@@ -163,10 +164,10 @@ Artery}{}{2021}{
     % EXPERIENCE
     \begin{tcolorbox}
         \section{Experience}
-        \cventry{22 months}{Senior ML Engineer}{TRINOV~\href{https://trinov.com/}{\color{red}\faLink}}{Avr 2023 - Jan 2025}{Paris}{
+        \cventry{22 months}{Senior MLOps Engineer}{TRINOV~\href{https://trinov.com/}{\color{red}\faLink}}{Avr 2023 - Jan 2025}{Paris}{
             \begin{itemize}
             \item \textbf{Leading a team} of 5 data scientists
-            \item Created an \textbf{AI infrastructure} with Terraform, Vertex AI and ZenML
+            \item Created an \textbf{AI infrastructure} with Terraform and Vertex AI
             \item Built an \textbf{ETL pipeline} with Airbyte, DBT, BigQuery and Dagster
             \item Designed a \textbf{real-time recommendation system} using Vertex AI Feature Store
             \end{itemize}
