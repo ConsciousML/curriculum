@@ -15,7 +15,7 @@ jobs:
 
       - uses: xu-cheng/latex-action@v4
         with:
-          root_file: axelm_resume.tex
+          root_file: resume.tex
           texlive_version: 2022
           compiler: pdflatex
           args: ''
