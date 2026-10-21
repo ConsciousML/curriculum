@@ -1,6 +1,6 @@
 # curriculum
 
-My resume, written in LaTeX with [moderncv](https://ctan.org/pkg/moderncv). The source is `axelm_resume.tex` and the built PDF is `axelm_resume.pdf`.
+My resume, written in LaTeX with [moderncv](https://ctan.org/pkg/moderncv). The source is `axelm_resume.tex`.
 
 ## Installation
 
@@ -52,13 +52,16 @@ Install [TeX Live](https://www.tug.org/texlive/) 2022, which provides `pdflatex`
 ## Build
 
 ```sh
-pdflatex axelm_resume.tex
+mkdir -p build
+pdflatex -output-directory build -jobname curriculum axelm_resume.tex
 ```
+
+The PDF is written to `build/curriculum.pdf`.
 
 ## Workflow
 
 `main` is protected, so every change goes through a pull request:
 
 1. Edit `axelm_resume.tex` on a branch.
-2. Build the PDF locally and commit it along with the source.
+2. Build the PDF locally to check it.
 3. Open a PR to `main`. CI checks that the resume compiles.
