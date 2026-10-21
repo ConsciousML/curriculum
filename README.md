@@ -1,4 +1,4 @@
-# curriculum
+# resume
 
 My resume, written in LaTeX with [moderncv](https://ctan.org/pkg/moderncv). The source is `resume.tex`.
 
@@ -53,10 +53,10 @@ Install [TeX Live](https://www.tug.org/texlive/) 2022, which provides `pdflatex`
 
 ```sh
 mkdir -p build
-pdflatex -output-directory build -jobname curriculum resume.tex
+pdflatex -output-directory build resume.tex
 ```
 
-The PDF is written to `build/curriculum.pdf`.
+The PDF is written to `build/resume.pdf`.
 
 ## Workflow
 
