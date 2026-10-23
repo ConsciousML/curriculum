@@ -5,218 +5,108 @@
 % conditions of the LaTeX Project Public License version 1.3c,
 % available at http://www.latex-project.org/lppl/.
 
-\documentclass[11pt,a4paper, sans]{moderncv}        % possible options include font size ('11pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
-% moderncv themes
-\moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{red}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
-%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
-% character encoding
-\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
-%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
-
-% adjust the page margins
-\usepackage[scale=0.965]{geometry}
+% Single-column layout, no icons: keeps the PDF text in reading order for ATS parsers.
+\documentclass[10pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{green}% accent color used everywhere (name, headings, rules, bullets)
+\nopagenumbers{}
+\usepackage[utf8]{inputenc}
+\usepackage[top=0.8cm,bottom=0.8cm,left=1.5cm,right=1.5cm,footskip=0pt]{geometry}
 \usepackage{fontawesome5}
-\usepackage{multicol}
-\usepackage{fancybox}
-\usepackage[many]{tcolorbox}
-\usetikzlibrary{calc}
-\tcbuselibrary{skins}
-\usepackage{eso-pic,graphicx}
-%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
-%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+% Wrap icon glyphs in an empty ActualText span so text extractors (ATS) skip them
+\newcommand{\icon}[1]{\pdfliteral page{/Span <</ActualText <FEFF>>> BDC}#1\pdfliteral page{EMC}}
+% Same for bullet markers, which otherwise extract on lines of their own
+\let\origlabelitemi\labelitemi
+\renewcommand*{\labelitemi}{\icon{\origlabelitemi}}
+% Visible link: accent color plus underline, since moderncv hides link styling
+\newcommand{\weblink}[2]{\href{#1}{\color{color1}\underline{#2}}}
 
 % personal data
 \name{Axel}{Mendoza}
-%\title{\textbf{Data Scientist}}                               % optional, remove / comment the line if not wanted
-\title{Senior MLOps Engineer\vspace{2ex}}                 % optional, remove / comment the line if not wanted
-
-\address{Paris}{75003}{France}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
-%\phone[mobile]{06 45 45 70 12}                   % optional, remove / comment the line if not wanted
-%\email{}                        % optional, remove / comment the line if not wanted
-%\social[linkedin]{axelmdz}
-%\social[github]{ConsciousML}
-\extrainfo{
-    \faLinkedin~\href{https://www.linkedin.com/in/axel-mendoza-298608121}{linkedin}\quad
-    \faBlog~\href{https://www.axelmendoza.com}{blog}\quad
-    \faAt~\href{mailto:axelmendoza@hotmail.fr}{axelmendoza@hotmail.fr}\quad
-    \faGithub~\href{https://www.github.com/consciousml}{github}\quad
-}
-%\phone{+33 6 45 45 70 12}
-%\photo[64pt][0.4pt]{Photo.png}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
-\quote{\color{red}{Advancing the frontier of AI through innovative Machine Learning solutions and efficient MLOps practices}}                            % optional, remove / comment the line if not wanted
-
-
-% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
-%\makeatletter
-%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
-%\makeatother
-%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
-
-% bibliography with mutiple entries
-%\usepackage{multibib}
-%\newcites{book,misc}{{Books},{Others}}
-%----------------------------------------------------------------------------------
-%            content
-%----------------------------------------------------------------------------------
-
-
-\setlength{\hintscolumnwidth}{2cm}
-\setlength{\separatorcolumnwidth}{1em}
-\setlength{\columnsep}{12pt}
-
-% Change title size
-\renewcommand*{\namefont}{\fontsize{22}{26}\bfseries\upshape}
-\renewcommand*{\titlefont}{\fontsize{22}{26}\bfseries\upshape}
+\title{Senior MLOps Engineer}
 
 \begin{document}
-%\tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{cvbackgroundcopy.jpg}};
-%\definecolor{light-gray}{gray}{0.97} 
-%\pagecolor{light-gray}
-\AddToShipoutPictureBG{\includegraphics[width=\paperwidth,height=\paperheight]{image/background.jpg}}
 
+% Hand-written header instead of \makecvtitle: tighter spacing, and contact details wrap onto two lines.
+% URLs are written out in full: ATS ignore link targets and only read the visible text.
+\begin{center}
+    {\fontsize{22}{26}\bfseries\color{color1}Axel Mendoza \color{color0}--- Senior MLOps Engineer}\\[4pt]
+    {\color{color2}
+    \icon{\faMapMarker*}~Mexico (Remote)\quad
+    \icon{\faAt}~\href{mailto:axelmendoza@hotmail.fr}{axelmendoza@hotmail.fr}\quad
+    \icon{\faLinkedin}~\href{https://www.linkedin.com/in/axelmdz}{linkedin.com/in/axelmdz}\\
+    \icon{\faBlog}~\href{https://www.axelmendoza.com}{axelmendoza.com}\quad
+    \icon{\faGithub}~\href{https://www.github.com/consciousml}{github.com/consciousml}}
+\end{center}
 
-%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
-%-----       resume       ---------------------------------------------------------
-\tcbset{enhanced,boxrule=0.4pt,colback=white!5!white,
-colframe=black!75!black,fonttitle=\bfseries,
-top=15pt,left=15pt,right=15pt,bottom=15pt,arc=5pt,
-before skip=12pt, after skip=12pt, shadow={-1mm}{-1mm}{0mm}{black!15!white}}
-
-\begin{tcolorbox}
-\makecvtitle
-\end{tcolorbox}
-
-\begin{multicols*}{2}
-    \setlength{\maincolumnwidth}{\linewidth-37pt}
-    
-    % SKILLS
-    \begin{tcolorbox}
-        \section{Technical Skills}
-        \cvitem{Programming Languages}{
-            \begin{tcolorbox}[enhanced,boxrule=0.2pt,colback=white!5!white,
-        colframe=red!75!red,top=3pt,bottom=2pt,right=30pt,left=30pt,shadow={-0mm}{-1mm}{-0.3mm}{black!8!white}]
-                \color{black} \makebox[\linewidth][s]{\textbf{Python SQL C++}}
-            \end{tcolorbox}}
-         
-        \cvitem{Tools}{\\Terraform, Terragrunt, Dagster, Airflow, Docker, CI/CD, MLflow, Airbyte, DBT, Git, Unix}
-        \cvitem{Python Frameworks}{\\PyTorch, TensorFlow, Keras, OpenCV, Scikit-learn, Numpy, Pandas, Matplotlib, Seaborn}
-
-        \textbf{Google Cloud Plaform (GCP):}
-        \vspace*{-0.7\baselineskip}
-        \begin{multicols*}{2}
-            \begin{itemize}
-            \item Vertex AI
-            \item Feature Store
-            \item Cloud Run
-            \item Cloud Storage
-            \item Pub/Sub
-            \item Compute Engine
-            \item BigQuery
-            \item Virtual Private Network
-            \end{itemize}
-        \end{multicols*}
-        \vspace*{-0.7\baselineskip}
-
-        \textbf{Domain of Expertise:}
-        \vspace*{-0.7\baselineskip}
-        \begin{multicols*}{2}
-            \begin{itemize}
-            \item Deep Learning
-            \item Medical Imaging
-            \item Object detection
-            \item Multi Object Tracking
-            \item Object Re-Identification
-            \item Recommender System
-            \end{itemize}
-        \end{multicols*}
-        %\cvlanguage{English}{Fluent}{lived in the US}
-        %\cvlanguage{Spanish}{Bilingual}{hispanic origins}
-        %\cvlanguage{French}{Native}{mother tongue}
-    \end{tcolorbox}
-    
-    \begin{tcolorbox}
-        \section{Papers}
-        \cventry{}{European Heart Journal}{Deep Learning for Vessel-specific Coronary
-Artery}{}{2021}{
+\section{Experience}
+\cventry{\textbf{\upshape 1 year 8 months}}{Platform Engineer, Open Source}{EKS Forge}{\mdseries Mar 2025 - Present}{}{
     \begin{itemize}
-        \item Co-author for Oxford University world famous journal at Siemens.
+    \item Architecting and building \textbf{\weblink{https://eks-forge.readthedocs.io/latest/}{EKS Forge}}, an \textbf{open-source platform} for Kubernetes on AWS designed to be forked, understood, and operated by a small team, \textbf{deployable in about a day}
+    \item \textbf{Multi-environment IaC} (dev, staging, prod) with Terraform and Terragrunt
+    \item \textbf{GitOps} with ArgoCD (App of Apps) and Karpenter \textbf{node autoscaling}
+    \item Private and public \textbf{ingress} with ALBs via Gateway API and the AWS Load Balancer Controller, \textbf{TLS} termination, and \textbf{DNS} via ExternalDNS
+    \item \textbf{Secured network access} with a Tailscale VPN into private VPC subnets, NAT and VPC Endpoint egress, security groups, and Cilium network policies
+    \item \textbf{Monitoring}, \textbf{logging}, and \textbf{alerting} with Prometheus, Grafana, and Loki
+    \item \textbf{CI/CD} with GitHub Actions: Terratest suites that \textbf{deploy} and \textbf{test real clusters}, with \textbf{gated promotion} to production
+    \item Published \textbf{documentation site} covering tutorials, how-tos, and architecture
     \end{itemize}
-    }
-    \end{tcolorbox}
-    
-    \begin{tcolorbox}
-    \section{Projects}
-        \cventry{Current}{Technical Writing}{ConsciousML Blog~\href{https://github.com/ConsciousML/ML-from-scratch}{\color{red}~\href{https://www.axelmendoza.com}{\faBlog}}}{2020}{}{
-        \begin{itemize}
-            \item Writing articles about Data Science, Data Engineering and MLOps
-        \end{itemize}}
-        
-        \cventry{12 months}{Python, Keras, OpenCV}{Autonomous RC Car~\href{https://github.com/ConsciousML/Autonomous-RC-Car}{\color{red}\faGithub}~\href{https://github.com/ConsciousML/Autonomous-RC-Car/raw/master/data/demo/v2.0/competition_03.mp4}{\color{red}\faCamera}}{2017}{}{
-        \begin{itemize}
-            \item Remote-controlled car that predicts speed and steering angle in real-time.
-            \item 3rd at \href{http://www.mylanderpages.com/ironcar2018/ironcar2018}{\color{red}IronCar} Summer 2018 and 1st at \href{https://www.meetup.com/DIY-Robocars-France}{\color{red}RobotCars} Winter 2018 tournaments.
-        \end{itemize}}
-        
-    \end{tcolorbox}
-    
-    % EXPERIENCE
-    \begin{tcolorbox}
-        \section{Experience}
-        \cventry{22 months}{Senior MLOps Engineer}{TRINOV~\href{https://trinov.com/}{\color{red}\faLink}}{Avr 2023 - Jan 2025}{Paris}{
-            \begin{itemize}
-            \item \textbf{Leading a team} of 5 data scientists
-            \item Created an \textbf{AI infrastructure} with Terraform and Vertex AI
-            \item Built an \textbf{ETL pipeline} with Airbyte, DBT, BigQuery and Dagster
-            \item Designed a \textbf{real-time recommendation system} using Vertex AI Feature Store
-            \end{itemize}
-        }
-        \cventry{27 months}{Computer Vision Engineer}{BOXY~\href{https://www.getboxy.co/}{\color{red}\faLink}}{Dec 2020 - Avr 2023}{Paris}{
-            \begin{itemize}
-                \item Designed person tracking and re-identification systems for an \textbf{autonomous grocery store}.
-                \item Created a semi-automatic \textbf{annotation pipeline} to generate data for Deep Learning using Airflow and GCP.
-                \item Managed and trained a team of 4 annotators on bounding box and pose video annotation.
-            \end{itemize}
-        }
-        
-        \cventry{14 months}{Computer Vision Engineer}{SIEMENS~\href{https://www.siemens-healthineers.com}{\color{red}\faLink}}{Apr 2019 - Jun 2020}{US}{
-        \begin{itemize}
-            \item Improved physician diagnosis of \textbf{heart disease} with the Unet architecture and Pytorch.
-            \item Improved heart disease diagnosis by \textbf{classifying calcium} in high and low risk arteries.
-            \item Enhanced detection of \textbf{mitral valve regurgitation} by creating a blood flow dealiasing model using Unet trained on 3D color doppler data using Pytorch and C++.
-            %\item Adapted reinforcement learning \href{http://comaniciu.net/Papers/MultiscaleDeepReinforcementLearning_PAMI18.pdf}{\color{red} paper} for real-time 3D landmark detection of new anatomies.
-            \item Automated the training of these algorithms using AirFlow.
-        \end{itemize}}
-        
-        \cventry{7 months}{Computer Vision Intern}{ENGIE~\href{https://www.engie.com/en/innovation-transition-energetique/centres-de-recherche/crigen}{\color{red}\faLink}}{May - Nov 2018}{Paris}{
-        \begin{itemize} 
-            \item Improved security of power-plants by designing a \textbf{multi-camera vehicle re-identification and tracking} system using Keras and TensorFlow.
-        \end{itemize}}
-        
-        \cventry{5 months}{Software Engineering Intern}{SAP~\href{https://www.sap.com/corporate/en/company.html}{\color{red}\faLink}}{Feb - Jul 2016}{Paris}{
-        \begin{itemize} 
-            \item Improved the quality of an excel pluggin by designing an \textbf{automatic testing platform} using SQL and Python.
-        \end{itemize}}
-    \end{tcolorbox}
-    
-    % EDUCATION
-    \begin{tcolorbox}
-        \section{Education}
-        \cventry[6pt]{5 years}{Computer Science, Data Science Major}{EPITA}{2013 - 2018}{}{
-        \begin{itemize}
-            \item \href{https://diplomeo.com/actualite-classement_ecoles_d_informatique}{\color{red}Top 10} computer engineering master degree and machine learning program in Paris.
-        \end{itemize}
-        }  % arguments 3 to 6 can be left empty
-        
-        %\cventry{6 months}{Computer Science}{Sejong University - South Korea}{2015}{Seoul}{
-        %\begin{itemize}
-        %    \item Exchange student program at Sejong University.
-        %\end{itemize}
-        %}
-    \end{tcolorbox}
-\end{multicols*}
-\end{document}
+}
+\cventry{\textbf{\upshape 6 years}}{Technical Writer}{ConsciousML}{\mdseries Oct 2020 - Present}{Freelance}{
+    \begin{itemize}
+    \item \textbf{Writing long-form articles} to bridge the gap between \textbf{Platform Engineering and ML}
+    \item Worked with Neptune.ai (acquired by OpenAI), Gruntwork, the MLOps Community and my own \textbf{\weblink{https://axelmendoza.com}{blog}}
+    \item Founding Terragrunt Ambassador
+    \end{itemize}
+}
+\cventry{\textbf{\upshape 1 year 10 months}}{Senior MLOps Engineer}{Trinov}{\mdseries Apr 2023 - Jan 2025}{Paris, France}{
+    \begin{itemize}
+    \item Architected and built a \textbf{recommender system} that reduced operators’ time spent manually matching documents by \textbf{3$\times$}
+    \item \textbf{Led a team} of 5 ML engineers
+    \item Served \textbf{Transformer embeddings in real time} with BentoML and Docker on Cloud Run, backed by Vertex AI Feature Store, with CI/CD for model deployment
+    \item Designed and owned \textbf{multi-environment IaC} on GCP with Terraform and Terragrunt
+    \item Built \textbf{data pipelines} with Airbyte, dbt and Dagster
+    \item Set up \textbf{experiment tracking} with MLflow
+    \item \textbf{Monitored ML models} with OpenTelemetry and Elastic for observability
+    \item \textbf{Load-tested} and \textbf{optimized} model server \textbf{inference} latency with Locust
+    \end{itemize}
+}
+\cventry{\textbf{\upshape 2 years 3 months}}{Computer Vision Engineer}{Boxy}{\mdseries Dec 2020 - Apr 2023}{Paris, France}{
+    \begin{itemize}
+    \item Enabled checkout-free shopping by designing the \textbf{person tracking} and \textbf{re-identification} system with PyTorch that attributes every product to the right customer, then migrated it to \textbf{C++} to run in \textbf{real time}
+    \item Reached \textbf{90\% correct product attribution} using \textbf{pose estimation} models
+    \item Created a semi-automatic \textbf{annotation pipeline} to generate data for Deep Learning
+    \item \textbf{Managed} and trained a team of 4 \textbf{annotators} on bounding box and pose video annotation
+    \end{itemize}
+}
+\cventry{\textbf{\upshape 1 year 2 months}}{Computer Vision Engineer}{Siemens}{\mdseries Apr 2019 - Jun 2020}{Princeton, New Jersey, US}{
+    \begin{itemize}
+    \item \textbf{Co-authored a paper} at the European Heart Journal titled ``Deep learning for vessel-specific coronary artery calcium scoring''
+    \item Built a coronary calcium detector with PyTorch that classifies calcium in high and low-risk arteries to support \textbf{heart disease diagnosis}
+    \item \textbf{Automated} the \textbf{training} of these algorithms using Airflow
+    \end{itemize}
+}
+\cventry{\textbf{\upshape 7 months}}{Computer Vision Intern}{Engie}{\mdseries May - Nov 2018}{Paris, France}{
+    \begin{itemize}
+    \item Improved security of power-plants by designing a \textbf{multi-camera vehicle re-identification and tracking} system using Keras and TensorFlow
+    \end{itemize}
+}
+\cventry{\textbf{\upshape 5 months}}{Software Engineering Intern}{SAP}{\mdseries Feb - Jul 2016}{Paris, France}{
+    \begin{itemize}
+    \item Improved the quality of an Excel plugin by designing an \textbf{automatic testing platform} using SQL and Python.
+    \end{itemize}
+}
 
+\section{Technical Skills}
+\cvitem{Cloud \& Infra}{AWS (EKS, VPC, IAM, ALB), GCP (Vertex AI, Cloud Run, BigQuery, Pub/Sub), Terraform, Terragrunt, Docker, GitHub Actions, Linux}
+\cvitem{Kubernetes}{ArgoCD, Helm, Karpenter, Cilium, Gateway API, External Secrets, ExternalDNS}
+\cvitem{Observability}{Prometheus, Grafana, Loki, OpenTelemetry, Elastic}
+\cvitem{ML \& Data}{PyTorch, BentoML, MLflow, Dagster, Airflow, dbt, Airbyte}
+\cvitem{Languages}{Python, SQL, C++, Bash}
+
+\section{Education}
+\cventry{\textbf{\upshape 5 years}}{Software Engineering Master Degree, Data Science Major}{EPITA}{\mdseries 2013 - 2018}{Paris, France}{}
+
+\end{document}
 
 %% end of file `template.tex'.
