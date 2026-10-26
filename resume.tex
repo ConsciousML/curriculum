@@ -15,6 +15,10 @@
 \usepackage{fontawesome5}
 % Wrap icon glyphs in an empty ActualText span so text extractors (ATS) skip them
 \newcommand{\icon}[1]{\pdfliteral page{/Span <</ActualText <FEFF>>> BDC}#1\pdfliteral page{EMC}}
+% Header icons extract as a text label instead, e.g. "Email: axel@..."
+\newcommand{\labelicon}[2]{\pdfliteral page{/Span <</ActualText (#1:)>> BDC}#2\pdfliteral page{EMC}}
+% Visible text extracts with a field label prepended, e.g. "Company: Trinov"
+\newcommand{\lbl}[2]{\pdfliteral page{/Span <</ActualText (#1: #2)>> BDC}#2\pdfliteral page{EMC}}
 % Same for bullet markers, which otherwise extract on lines of their own
 \let\origlabelitemi\labelitemi
 \renewcommand*{\labelitemi}{\icon{\origlabelitemi}}
@@ -23,89 +27,85 @@
 
 % personal data
 \name{Axel}{Mendoza}
-\title{Senior MLOps Engineer}
+\title{Platform Engineer}
 
 \begin{document}
 
 % Hand-written header instead of \makecvtitle: tighter spacing, and contact details wrap onto two lines.
 % URLs are written out in full: ATS ignore link targets and only read the visible text.
 \begin{center}
-    {\fontsize{22}{26}\bfseries\color{color1}Axel Mendoza \color{color0}--- Senior MLOps Engineer}\\[4pt]
+    {\fontsize{22}{26}\bfseries\color{color1}Axel Mendoza \color{color0}--- Senior MLOps \& Platform Engineer}\\[4pt]
     {\color{color2}
-    \icon{\faMapMarker*}~Mexico (Remote)\quad
-    \icon{\faAt}~\href{mailto:axelmendoza@hotmail.fr}{axelmendoza@hotmail.fr}\quad
-    \icon{\faLinkedin}~\href{https://www.linkedin.com/in/axelmdz}{linkedin.com/in/axelmdz}\\
-    \icon{\faBlog}~\href{https://www.axelmendoza.com}{axelmendoza.com}\quad
-    \icon{\faGithub}~\href{https://www.github.com/consciousml}{github.com/consciousml}}
+    \labelicon{Location}{\faMapMarker*}~Based in Mexico (work permit)\quad
+    \labelicon{Citizenship}{\faPassport}~EU citizen (French)\quad
+    \labelicon{Email}{\faAt}~\href{mailto:axelmendoza@hotmail.fr}{axelmendoza@hotmail.fr}\\
+    \labelicon{LinkedIn}{\faLinkedin}~\href{https://www.linkedin.com/in/axelmdz}{linkedin.com/in/axelmdz}\quad
+    \labelicon{Website}{\faBlog}~\href{https://www.axelmendoza.com}{axelmendoza.com}\quad
+    \labelicon{GitHub}{\faGithub}~\href{https://www.github.com/consciousml}{github.com/consciousml}}
 \end{center}
 
-\section{Experience}
-\cventry{\textbf{\upshape 1 year 8 months}}{Platform Engineer, Open Source}{EKS Forge}{\mdseries Mar 2025 - Present}{}{
+\section{\lbl{Section}{Experience}}
+\cventry{\textbf{\upshape \lbl{Duration}{1 year 8 months}}}{\lbl{Title}{Platform Engineer, Open Source}}{\lbl{Company}{EKS Forge}}{\mdseries \lbl{Dates}{Mar 2025 - Present}}{}{
     \begin{itemize}
     \item Architecting and building \textbf{\weblink{https://eks-forge.readthedocs.io/latest/}{EKS Forge}}, an \textbf{open-source platform} for Kubernetes on AWS designed to be forked, understood, and operated by a small team, \textbf{deployable in about a day}
     \item \textbf{Multi-environment IaC} (dev, staging, prod) with Terraform and Terragrunt
-    \item \textbf{GitOps} with ArgoCD (App of Apps) and Karpenter \textbf{node autoscaling}
-    \item Private and public \textbf{ingress} with ALBs via Gateway API and the AWS Load Balancer Controller, \textbf{TLS} termination, and \textbf{DNS} via ExternalDNS
-    \item \textbf{Secured network access} with a Tailscale VPN into private VPC subnets, NAT and VPC Endpoint egress, security groups, and Cilium network policies
+    \item \textbf{GitOps} with ArgoCD (App of Apps) and Helm
+    \item \textbf{Node autoscaling} with Karpenter
+    \item Private and public \textbf{ingress} with ALBs via Gateway API and the AWS Load Balancer Controller, \textbf{TLS} termination, and \textbf{DNS} via ExternalDNS and Route 53
+    \item \textbf{Secured access} with workload identity via EKS Pod Identity, a Tailscale VPN into private VPC subnets, NAT and VPC Endpoint egress, security groups, and Cilium network policies
     \item \textbf{Monitoring}, \textbf{logging}, and \textbf{alerting} with Prometheus, Grafana, and Loki
     \item \textbf{CI/CD} with GitHub Actions: Terratest suites that \textbf{deploy} and \textbf{test real clusters}, with \textbf{gated promotion} to production
     \item Published \textbf{documentation site} covering tutorials, how-tos, and architecture
+    \item Currently adding LLM inference on GPU nodes: NVIDIA GPU Operator, vLLM on KServe, autoscaling, GPU utilization observability, and SLO-based alerting
     \end{itemize}
 }
-\cventry{\textbf{\upshape 6 years}}{Technical Writer}{ConsciousML}{\mdseries Oct 2020 - Present}{Freelance}{
-    \begin{itemize}
-    \item \textbf{Writing long-form articles} to bridge the gap between \textbf{Platform Engineering and ML}
-    \item Worked with Neptune.ai (acquired by OpenAI), Gruntwork, the MLOps Community and my own \textbf{\weblink{https://axelmendoza.com}{blog}}
-    \item Founding Terragrunt Ambassador
-    \end{itemize}
-}
-\cventry{\textbf{\upshape 1 year 10 months}}{Senior MLOps Engineer}{Trinov}{\mdseries Apr 2023 - Jan 2025}{Paris, France}{
+\cventry{\textbf{\upshape \lbl{Duration}{1 year 10 months}}}{\lbl{Title}{Senior MLOps Engineer}}{\lbl{Company}{Trinov}}{\mdseries \lbl{Dates}{Apr 2023 - Jan 2025}}{\lbl{Location}{Paris, France}}{
     \begin{itemize}
     \item Architected and built a \textbf{recommender system} that reduced operators’ time spent manually matching documents by \textbf{3$\times$}
     \item \textbf{Led a team} of 5 ML engineers
-    \item Served \textbf{Transformer embeddings in real time} with BentoML and Docker on Cloud Run, backed by Vertex AI Feature Store, with CI/CD for model deployment
+    \item \textbf{Real-time model serving} (Transformer embeddings) with BentoML and Docker on Cloud Run, backed by Vertex AI Feature Store, with CI/CD for model deployment
     \item Designed and owned \textbf{multi-environment IaC} on GCP with Terraform and Terragrunt
-    \item Built \textbf{data pipelines} with Airbyte, dbt and Dagster
-    \item Set up \textbf{experiment tracking} with MLflow
+    \item Built \textbf{data pipelines} with Airbyte, dbt and Dagster and set up \textbf{experiment tracking} with MLflow
     \item \textbf{Monitored ML models} with OpenTelemetry and Elastic for observability
     \item \textbf{Load-tested} and \textbf{optimized} model server \textbf{inference} latency with Locust
     \end{itemize}
 }
-\cventry{\textbf{\upshape 2 years 3 months}}{Computer Vision Engineer}{Boxy}{\mdseries Dec 2020 - Apr 2023}{Paris, France}{
+\cventry{\textbf{\upshape \lbl{Duration}{6 years}}}{\lbl{Title}{Technical Writer}}{\lbl{Company}{ConsciousML}}{\mdseries \lbl{Dates}{Oct 2020 - Present}}{\lbl{Employment type}{Freelance}}{
     \begin{itemize}
-    \item Enabled checkout-free shopping by designing the \textbf{person tracking} and \textbf{re-identification} system with PyTorch that attributes every product to the right customer, then migrated it to \textbf{C++} to run in \textbf{real time}
+    \item \textbf{Writing long-form articles} to bridge the gap between \textbf{Platform Engineering and ML}
+    \item Worked with Neptune.ai (acquired by OpenAI), Gruntwork (Terragrunt Ambassador), the MLOps Community and my own \textbf{\weblink{https://axelmendoza.com}{blog}}
+    \end{itemize}
+}
+\cventry{\textbf{\upshape \lbl{Duration}{2 years 3 months}}}{\lbl{Title}{Computer Vision Engineer}}{\lbl{Company}{Boxy}}{\mdseries \lbl{Dates}{Dec 2020 - Apr 2023}}{\lbl{Location}{Paris, France}}{
+    \begin{itemize}
+    \item Enabled checkout-free shopping by designing the \textbf{person tracking} and \textbf{re-identification} system with PyTorch that attributes every product to the right customer, then migrated it to C++ to run in \textbf{real time}
     \item Reached \textbf{90\% correct product attribution} using \textbf{pose estimation} models
     \item Created a semi-automatic \textbf{annotation pipeline} to generate data for Deep Learning
     \item \textbf{Managed} and trained a team of 4 \textbf{annotators} on bounding box and pose video annotation
     \end{itemize}
 }
-\cventry{\textbf{\upshape 1 year 2 months}}{Computer Vision Engineer}{Siemens}{\mdseries Apr 2019 - Jun 2020}{Princeton, New Jersey, US}{
+\cventry{\textbf{\upshape \lbl{Duration}{1 year 2 months}}}{\lbl{Title}{Computer Vision Engineer}}{\lbl{Company}{Siemens}}{\mdseries \lbl{Dates}{Apr 2019 - Jun 2020}}{\lbl{Location}{Princeton, New Jersey, US}}{
     \begin{itemize}
     \item \textbf{Co-authored a paper} at the European Heart Journal titled ``Deep learning for vessel-specific coronary artery calcium scoring''
     \item Built a coronary calcium detector with PyTorch that classifies calcium in high and low-risk arteries to support \textbf{heart disease diagnosis}
     \item \textbf{Automated} the \textbf{training} of these algorithms using Airflow
     \end{itemize}
 }
-\cventry{\textbf{\upshape 7 months}}{Computer Vision Intern}{Engie}{\mdseries May - Nov 2018}{Paris, France}{
+\cventry{\textbf{\upshape \lbl{Duration}{7 months}}}{\lbl{Title}{Computer Vision Intern}}{\lbl{Company}{Engie}}{\mdseries \lbl{Dates}{May - Nov 2018}}{\lbl{Location}{Paris, France}}{
     \begin{itemize}
     \item Improved security of power-plants by designing a \textbf{multi-camera vehicle re-identification and tracking} system using Keras and TensorFlow
     \end{itemize}
 }
-\cventry{\textbf{\upshape 5 months}}{Software Engineering Intern}{SAP}{\mdseries Feb - Jul 2016}{Paris, France}{
-    \begin{itemize}
-    \item Improved the quality of an Excel plugin by designing an \textbf{automatic testing platform} using SQL and Python.
-    \end{itemize}
-}
 
-\section{Technical Skills}
-\cvitem{Cloud \& Infra}{AWS (EKS, VPC, IAM, ALB), GCP (Vertex AI, Cloud Run, BigQuery, Pub/Sub), Terraform, Terragrunt, Docker, GitHub Actions, Linux}
+\section{\lbl{Section}{Technical Skills}}
+\cvitem{Cloud \& Infra}{AWS (EKS, VPC, IAM, EC2, ALB, ACM, Route 53), GCP (Vertex AI, Compute Engine, Cloud Run, BigQuery, Pub/Sub), Terraform, Terragrunt, Terratest, Docker, GitHub Actions, Linux}
 \cvitem{Kubernetes}{ArgoCD, Helm, Karpenter, Cilium, Gateway API, External Secrets, ExternalDNS}
 \cvitem{Observability}{Prometheus, Grafana, Loki, OpenTelemetry, Elastic}
 \cvitem{ML \& Data}{PyTorch, BentoML, MLflow, Dagster, Airflow, dbt, Airbyte}
 \cvitem{Languages}{Python, SQL, C++, Bash}
 
-\section{Education}
-\cventry{\textbf{\upshape 5 years}}{Software Engineering Master Degree, Data Science Major}{EPITA}{\mdseries 2013 - 2018}{Paris, France}{}
+\section{\lbl{Section}{Education}}
+\cventry{\textbf{\upshape \lbl{Duration}{5 years}}}{\lbl{Degree}{Software Engineering Master Degree, Data Science Major}}{\lbl{School}{EPITA}}{\mdseries \lbl{Dates}{2013 - 2018}}{\lbl{Location}{Paris, France}}{}
 
 \end{document}
 
